@@ -1,98 +1,91 @@
-## WWW2025_MMCTR_Challenge
+# 🚀 MMCTR Challenge - Team MMCTR from xinlab 🔥
 
-The WWW 2025 Multimodal CTR Prediction Challenge: https://www.codabench.org/competitions/5372/
+## 🏆 Introduction
 
-The MM-CTR challenge is organized by the WWW 2025 EReL@MIR workshop, which contains two sub-tasks: multimodal item embedding and multimodal CTR prediction. The first task centers on developing multimodal representation learning and fusion methods tailored for recommendation tasks, while the second focuses on designing CTR prediction models that effectively utilize embedding features to enhance recommendation accuracy. The two challenge tasks are designed to promote potential solutions with practical value and insights for industrial applications. Please check out more details on the challenge website: https://erel-mir.github.io/challenge/mmctr-track2/.
+This repository contains our solution for the **WWW 2025 Multimodal CTR Prediction Challenge** (Track 2: Multimodal CTR Prediction), organized by the **WWW 2025 EReL@MIR workshop**. The challenge focuses on developing effective multimodal representation learning and fusion methods for CTR prediction in recommendation systems.
 
-This baseline is built on top of [FuxiCTR, a configurable, tunable, and reproducible library for CTR prediction](https://github.com/reczoo/FuxiCTR). The library has been listed among [the recommended frameworks](https://github.com/ACMRecSys/recsys-evaluation-frameworks) by the ACM RecSys Conference. We open source the baseline solution code to help beginers get familar with FuxiCTR and quickly get started on this task.
+Our solution is based on the baseline provided by the challenge organizers, with modifications and improvements in feature fusion and model tuning. We aim to enhance the recommendation accuracy by optimizing multimodal embeddings and their integration into the CTR model.
 
-🔥 Please cite the paper:
+📌 For details about the challenge, please visit:
+-  [Challenge website](https://erel-mir.github.io/challenge/mmctr-track2/)
+-  [Competition platform](https://www.codabench.org/competitions/5372/)
+-  [Baseline repository](https://github.com/reczoo/WWW2025_MMCTR_Challenge)
 
-+ Jieming Zhu, Jinyang Liu, Shuai Yang, Qi Zhang, Xiuqiang He. [Open Benchmarking for Click-Through Rate Prediction](https://arxiv.org/abs/2009.05794). *The 30th ACM International Conference on Information and Knowledge Management (CIKM)*, 2021.
+---
 
+## 📂 1. Data Preparation
 
-### Data Preparation
+ **Download the dataset** from the official source:
+   - [🔗 MicroLens 1M MMCTR Dataset](https://recsys.westlake.edu.cn/MicroLens_1M_MMCTR)
 
-1. Download the datasets at: https://recsys.westlake.edu.cn/MicroLens_1M_MMCTR
+ **Unzip the dataset** into the `data/` directory:
 
-2. Unzip the data files to the `data` directory
-
-    ```bash
-    cd ~/WWW2025_MMCTR_Challenge/data/
-    find -L .
-
-    .
-    ./MicroLens_1M_x1
-    ./MicroLens_1M_x1/train.parquet
-    ./MicroLens_1M_x1/valid.parquet
-    ./MicroLens_1M_x1/test.parquet
-    ./MicroLens_1M_x1/item_info.parquet
-    ./item_feature.parquet
-    ./item_emb.parquet   
-    ./item_seq.parquet  
-    ./item_images.rar  
-    ```
-
-### Environment
-
-We run the experiments on a P100 GPU server with 16G GPU memory and 750G RAM.
-
-Please set up the environment as follows. 
-
-+ torch==1.13.1+cu117
-+ fuxictr==2.3.7
-
+```bash
+cd ~/MMCTR_Challenge/data/
+find -L .
 ```
+
+📁 **Expected data structure:**
+```
+./MicroLens_1M_x1/
+├── train.parquet
+├── valid.parquet
+├── test.parquet
+├── item_info.parquet
+├── item_feature.parquet   
+├── item_emb.parquet      
+├── item_seq.parquet      
+├── item_images.rar      
+```
+
+---
+
+## 🛠️ 2. Environment Setup
+
+We use the same environment setup as the baseline:
+
+```bash
 conda create -n fuxictr python==3.9
 pip install -r requirements.txt
 source activate fuxictr
 ```
 
-### How to Run
+✅ **Required dependencies:**
+- 🟢 torch==1.13.1+cu117
+- 🟢 fuxictr==2.3.7
 
-1. Train the model on train and validation sets:
+📌 **For full setup details**, please refer to the [baseline repository](https://github.com/reczoo/WWW2025_MMCTR_Challenge).
 
-    ```
-    python run_param_tuner.py --config config/DIN_microlens_mmctr_tuner_config_01.yaml --gpu 0
-    ```
+---
 
-    In this config file, you can tune the hyper-parameters accordingly by specifying hyper-parameters as a list for grid search as follows. You could also modify the hyper-parameters directly, e.g., `net_dropout: 0.2`.
+## 🚀 3. How to Run
 
-    ```
-    embedding_regularizer: [1.e-6, 1.e-7]
-    net_regularizer: 0
-    net_dropout: 0.1
-    learning_rate: 1.e-3
-    batch_size: 8192
-    ```
+After setting up the environment and downloading the dataset, simply run:
 
-    Note that for challenge task 1, participants can only tune the above five hyper-parameters in `config/DIN_microlens_mmctr_tuner_config_01.yaml`. Other hyper-parameters should be fixed.
-    
-    We get the best validation AUC: 0.8655.
+```bash
+bash run.sh
+```
 
-2. Make predictions on the test set:
+ **The `run.sh` script will handle:**
+1️⃣ Data preprocessing 🏗️
+2️⃣ Model training 🎯
+3️⃣ Prediction on the test set 🔍
+4️⃣ Generating the final submission file 📄
 
-    After model training, you can obtain the result file `DIN_microlens_mmctr_tuner_config_01.csv`. Find the best validation AUC from the result csv file, and obtain the corresponding `experiment_id`. Then you can run predictions on the test set.
+---
 
-    ```
-    python prediction.py --config config/DIN_microlens_mmctr_tuner_config_01 --expid DIN_MicroLens_1M_x1_xxx --gpu 0
-    ```
+## 💬 4. Discussion
 
-    After finishing prediction, you can submit the solution file `submission/DIN_MicroLens_1M_x1_xxx.zip`.
+**For any questions or discussions related to our implementation, feel free to contact us via email.**
 
-3. Make a submission to [the leaderboard](https://www.codabench.org/competitions/5372/#/results-tab).
+ **Contact:** [scut201930033162@gmail.com]
 
-    <div align="left">
-        <img width="90%" src="https://cdn.jsdelivr.net/gh/reczoo/WWW2025_MMCTR_Challenge@main/img/submission_v1.jpg">
-    </div>
+ Alternatively, you can start a discussion on the challenge forum:
+- 🔗 [Codabench Forum](https://www.codabench.org/forums/5287/)
 
-### Potential Improvements
 
-+ To build the baseline, we simply reuse the DIN model, which is popular for sequential user interest modeling for CTR prediction. We encourage participants to explore some other alternatives for Challenge Task 2.
-+ We currently only take extracted text and image embeddings from Bert and CLIP. We encourage participants to explore some new LLMs/MLLMs for multimodal item embedding. Item embedding models can also be trained via sequential modeling or contrastive learning.
-+ We only concatenate text and image embeddings and apply PCA for dimensionality reduction. It is interesting to explore other methods for fusing multimodal embedding features.
 
-### Discussion
-Welcome to join our WeChat group for any question and discussion. Or you can start a new topic on [the Codabench forum](https://www.codabench.org/forums/5287/).
+---
 
-![Scan QR code](https://cdn.jsdelivr.net/gh/reczoo/WWW2025_MMCTR_Challenge@main/img/wechat.png)
+🔥 This document serves as the official README for our MMCTR challenge submission. Thank you! 🚀
+
