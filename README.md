@@ -4,7 +4,7 @@
 
 This repository contains our solution for the **WWW 2025 Multimodal CTR Prediction Challenge** (Track 2: Multimodal CTR Prediction), organized by the **WWW 2025 EReL@MIR workshop**. The challenge focuses on developing effective multimodal representation learning and fusion methods for CTR prediction in recommendation systems.
 
-Our solution is based on the baseline provided by the challenge organizers, with modifications and improvements in feature fusion and model tuning. We aim to enhance the recommendation accuracy by optimizing multimodal embeddings and their integration into the CTR model.
+Our solution is based on the baseline provided by the challenge organizers, with modifications and improvements in model tuning. We aim to enhance the recommendation accuracy by optimizing a new feature embedding mechanism and an  auxiliary loss.
 
 📌 For details about the challenge, please visit:
 -  [Challenge website](https://erel-mir.github.io/challenge/mmctr-track2/)
@@ -21,7 +21,7 @@ Our solution is based on the baseline provided by the challenge organizers, with
  **Unzip the dataset** into the `data/` directory:
 
 ```bash
-cd ~/MMCTR_Challenge/data/
+cd ~/MM-CTR-MMCTRers/data/
 find -L .
 ```
 
@@ -32,10 +32,10 @@ find -L .
 ├── valid.parquet
 ├── test.parquet
 ├── item_info.parquet
-├── item_feature.parquet   
-├── item_emb.parquet      
-├── item_seq.parquet      
-├── item_images.rar      
+item_feature.parquet   
+item_emb.parquet      
+item_seq.parquet      
+item_images.rar      
 ```
 
 ---
@@ -63,14 +63,17 @@ source activate fuxictr
 After setting up the environment and downloading the dataset, simply run:
 
 ```bash
+chmod +x run.sh
 bash run.sh
 ```
 
  **The `run.sh` script will handle:**
-1️⃣ Data preprocessing 🏗️
+1️⃣ config set(if not ) 🏗️
 2️⃣ Model training 🎯
 3️⃣ Prediction on the test set 🔍
 4️⃣ Generating the final submission file 📄
+
+**you can also modify our model and parameters as you want it by changing  ./config/DIN_attn_emb_v3**
 
 ---
 
@@ -80,12 +83,13 @@ bash run.sh
 
  **Contact:** [scut201930033162@gmail.com]
 
- Alternatively, you can start a discussion on the challenge forum:
-- 🔗 [Codabench Forum](https://www.codabench.org/forums/5287/)
-
-
-
+---
+## 📌 TODO：
+    - detailed illustration of proposed algorithm
 ---
 
-🔥 This document serves as the official README for our MMCTR challenge submission. Thank you! 🚀
+This document serves as the official README for our MMCTR challenge submission. Thank you! 
 
+🔥 If you find this work helpful , Please cite the officer paper:
+
++ Jieming Zhu, Jinyang Liu, Shuai Yang, Qi Zhang, Xiuqiang He. [Open Benchmarking for Click-Through Rate Prediction](https://arxiv.org/abs/2009.05794). *The 30th ACM International Conference on Information and Knowledge Management (CIKM)*, 2021.
