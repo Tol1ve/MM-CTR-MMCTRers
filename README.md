@@ -101,6 +101,7 @@ Our pre-trained model is located at
 ---
 ## 📌 TODO：
     - detailed illustration of proposed algorithm
+    - A readme in chinese
 ---
 
 This document serves as the official README for our MMCTR challenge submission. Thank you! 
