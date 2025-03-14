@@ -1,4 +1,4 @@
-# 🚀 MMCTR Challenge - Team MMCTR from xinlab 🔥
+# 🚀 MMCTR Challenge - Team MMCTRers from xinlab 
 
 ## 🏆 Introduction
 
@@ -67,10 +67,16 @@ After setting up the environment and downloading the dataset, simply run:
 chmod +x run.sh
 bash run.sh
 ```
-⚠️ **untestd way**
+
+⚠️ **unproved way**
 ```bash
 chmod +x run_from_begin.sh
 bash run_from_begin.sh
+```
+
+🚀 **inferrence from our pre-trained model,simply:**
+```bash
+python prediction.py --config ./config/DIN_attn_emb_v3 --expid DIN_DIN_attn_emb_v2_001_acf37100 --gpu 0
 ```
  **The `run.sh` script will handle:**
 1️⃣ config set(if not ) 🏗️
@@ -78,7 +84,11 @@ bash run_from_begin.sh
 3️⃣ Prediction on the test set 🔍
 4️⃣ Generating the final submission file 📄
 
-**you can also modify our model and parameters as you want it by changing  ./config/DIN_attn_emb_v3**
+Our pre-trained model is located at 
+
+  - ./checkpoints/DIN_attn_emb_v2/DIN_DIN_attn_emb_v2_001_acf37100.model
+
+**You can also modify our model and parameters as you want it by changing  ./config/DIN_attn_emb_v3**
 
 ---
 
