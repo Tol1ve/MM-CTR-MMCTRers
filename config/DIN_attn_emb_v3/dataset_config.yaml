@@ -1,0 +1,19 @@
+DIN_attn_emb_v2:
+    data_format: parquet
+    data_root: ./data/
+    feature_cols:
+    - {active: true, dtype: int, name: user_id, type: meta}
+    - {active: true, dtype: int, name: item_seq, type: meta}
+    - {active: true, dtype: int, name: likes_level, type: categorical, vocab_size: 11}
+    - {active: true, dtype: int, name: views_level, type: categorical, vocab_size: 11}
+    - {active: true, dtype: int, name: item_id, source: item, type: categorical, vocab_size: 91718}
+    - {active: true, dtype: int, max_len: 5, name: item_tags, source: item, type: sequence,
+        vocab_size: 11740}
+    - {active: true, dtype: float, embedding_dim: 128, name: item_emb_d128, source: item,
+        type: embedding}
+    item_info: ./data/MicroLens_1M_x1/item_info.parquet
+    label_col: {dtype: float, name: label}
+    rebuild_dataset: false
+    test_data: ./data/MicroLens_1M_x1/test.parquet
+    train_data: ./data/MicroLens_1M_x1/train.parquet
+    valid_data: ./data/MicroLens_1M_x1/valid.parquet

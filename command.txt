@@ -1,0 +1,37 @@
+--train
+python run_param_tuner.py --config config/DIN_task1.yaml --gpu 3
+
+
+
+
+/home/chenruiyue/competition/WWW2025_MMCTR/WWW2025_MMCTR_Challenge/config/Y_DIN_attn.yaml
+
+--yue train new
+python run_param_tuner.py --config config/Y_DIN_attn_x1.yaml --gpu 0
+python run_param_tuner.py --config config/DIN_task1.yaml --gpu 0
+DIN_task1
+/home/chenruiyue/competition/WWW2025_MMCTR/WWW2025_MMCTR_Challenge/config/Y_DIN_attn_x1.yaml
+
+
+
+ /home/chenruiyue/competition/WWW2025_MMCTR/WWW2025_MMCTR_Challenge/config/Y_DIN_attn_x1.yaml
+
+/home/chenruiyue/competition/WWW2025_MMCTR/WWW2025_MMCTR_Challenge/config/DIN_task1.yaml
+
+DIN_default_001_dae57ac1
+
+/home/chenruiyue/competition/WWW2025_MMCTR/WWW2025_MMCTR_Challenge/config/useless/DIN_old_attn.yaml
+
+/home/chenruiyue/competition/WWW2025_MMCTR/WWW2025_MMCTR_Challenge/config/DIN_microlens_mmctr_tuner_config_01.yaml
+--test
+python prediction.py --config config/Y_DIN_attn_x1 --expid DIN_default_001_dae57ac1 --gpu 0
+ 
+今天跑四个模型
+第一个gpu3 attnv2 继续修改seed
+
+
+加了mlp
+第二个gpu1 attn_embv1 
+第三个gpu2 attn_embv2 考虑numlayer和alpha
+
+第四个 考虑改rms

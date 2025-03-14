@@ -1,0 +1,215 @@
+DIN_DIN_attn_emb_v2_001_acf37100:
+    accumulation_steps: 1
+    alpha: 0.8
+    attention_dropout: 0.1
+    attention_hidden_activations: ReLU
+    attention_hidden_units: [512, 256]
+    attention_output_activation: null
+    batch_norm: true
+    batch_size: 4096
+    dataset_id: DIN_attn_emb_v2
+    debug_mode: false
+    din_use_softmax: false
+    dnn_activations: ReLU
+    dnn_hidden_units: [1024, 512, 512, 256, 128, 64]
+    early_stop_patience: 4
+    embedding_dim: 64
+    embedding_regularizer: 0.001
+    epochs: 100
+    eval_steps: null
+    feature_config: null
+    feature_specs: null
+    group_id: user_id
+    learning_rate: 0.001
+    loss: binary_crossentropy
+    max_len: 64
+    metrics: [AUC, logloss]
+    model: DIN
+    model_change: DIN_att_emb_rms
+    model_root: ./checkpoints/
+    monitor: AUC
+    monitor_mode: max
+    net_dropout: 0.1
+    net_regularizer: 0.05
+    num_layers: 4
+    num_workers: 3
+    optimizer: adam
+    pickle_feature_encoder: true
+    save_best_only: true
+    seed: 2026
+    shuffle: true
+    task: binary_classification
+    use_features: null
+    verbose: 1
+DIN_DIN_attn_emb_v2_002_29538455:
+    accumulation_steps: 1
+    alpha: 0.8
+    attention_dropout: 0.1
+    attention_hidden_activations: ReLU
+    attention_hidden_units: [512, 256]
+    attention_output_activation: null
+    batch_norm: true
+    batch_size: 4096
+    dataset_id: DIN_attn_emb_v2
+    debug_mode: false
+    din_use_softmax: false
+    dnn_activations: ReLU
+    dnn_hidden_units: [1024, 512, 512, 256, 128, 64]
+    early_stop_patience: 4
+    embedding_dim: 64
+    embedding_regularizer: 0.001
+    epochs: 100
+    eval_steps: null
+    feature_config: null
+    feature_specs: null
+    group_id: user_id
+    learning_rate: 0.001
+    loss: binary_crossentropy
+    max_len: 64
+    metrics: [AUC, logloss]
+    model: DIN
+    model_change: DIN_att_emb_rms
+    model_root: ./checkpoints/
+    monitor: AUC
+    monitor_mode: max
+    net_dropout: 0.1
+    net_regularizer: 0.05
+    num_layers: 4
+    num_workers: 3
+    optimizer: adam
+    pickle_feature_encoder: true
+    save_best_only: true
+    seed: 2027
+    shuffle: true
+    task: binary_classification
+    use_features: null
+    verbose: 1
+DIN_DIN_attn_emb_v2_003_75e8e731:
+    accumulation_steps: 1
+    alpha: 0.8
+    attention_dropout: 0.1
+    attention_hidden_activations: ReLU
+    attention_hidden_units: [512, 256]
+    attention_output_activation: null
+    batch_norm: true
+    batch_size: 4096
+    dataset_id: DIN_attn_emb_v2
+    debug_mode: false
+    din_use_softmax: false
+    dnn_activations: ReLU
+    dnn_hidden_units: [1024, 512, 512, 256, 128, 64]
+    early_stop_patience: 4
+    embedding_dim: 64
+    embedding_regularizer: 0.001
+    epochs: 100
+    eval_steps: null
+    feature_config: null
+    feature_specs: null
+    group_id: user_id
+    learning_rate: 0.001
+    loss: binary_crossentropy
+    max_len: 64
+    metrics: [AUC, logloss]
+    model: DIN
+    model_change: DIN_att_emb_rms
+    model_root: ./checkpoints/
+    monitor: AUC
+    monitor_mode: max
+    net_dropout: 0.1
+    net_regularizer: 0.05
+    num_layers: 4
+    num_workers: 3
+    optimizer: adam
+    pickle_feature_encoder: true
+    save_best_only: true
+    seed: 2028
+    shuffle: true
+    task: binary_classification
+    use_features: null
+    verbose: 1
+DIN_DIN_attn_emb_v2_004_851a2832:
+    accumulation_steps: 1
+    alpha: 0.8
+    attention_dropout: 0.1
+    attention_hidden_activations: ReLU
+    attention_hidden_units: [512, 256]
+    attention_output_activation: null
+    batch_norm: true
+    batch_size: 4096
+    dataset_id: DIN_attn_emb_v2
+    debug_mode: false
+    din_use_softmax: false
+    dnn_activations: ReLU
+    dnn_hidden_units: [1024, 512, 512, 256, 128, 64]
+    early_stop_patience: 4
+    embedding_dim: 64
+    embedding_regularizer: 0.001
+    epochs: 100
+    eval_steps: null
+    feature_config: null
+    feature_specs: null
+    group_id: user_id
+    learning_rate: 0.001
+    loss: binary_crossentropy
+    max_len: 64
+    metrics: [AUC, logloss]
+    model: DIN
+    model_change: DIN_att_emb_rms
+    model_root: ./checkpoints/
+    monitor: AUC
+    monitor_mode: max
+    net_dropout: 0.1
+    net_regularizer: 0.05
+    num_layers: 4
+    num_workers: 3
+    optimizer: adam
+    pickle_feature_encoder: true
+    save_best_only: true
+    seed: 2029
+    shuffle: true
+    task: binary_classification
+    use_features: null
+    verbose: 1
+DIN_DIN_attn_emb_v2_005_d376768c:
+    accumulation_steps: 1
+    alpha: 0.8
+    attention_dropout: 0.1
+    attention_hidden_activations: ReLU
+    attention_hidden_units: [512, 256]
+    attention_output_activation: null
+    batch_norm: true
+    batch_size: 4096
+    dataset_id: DIN_attn_emb_v2
+    debug_mode: false
+    din_use_softmax: false
+    dnn_activations: ReLU
+    dnn_hidden_units: [1024, 512, 512, 256, 128, 64]
+    early_stop_patience: 4
+    embedding_dim: 64
+    embedding_regularizer: 0.001
+    epochs: 100
+    eval_steps: null
+    feature_config: null
+    feature_specs: null
+    group_id: user_id
+    learning_rate: 0.001
+    loss: binary_crossentropy
+    max_len: 64
+    metrics: [AUC, logloss]
+    model: DIN
+    model_change: DIN_att_emb_rms
+    model_root: ./checkpoints/
+    monitor: AUC
+    monitor_mode: max
+    net_dropout: 0.1
+    net_regularizer: 0.05
+    num_layers: 4
+    num_workers: 3
+    optimizer: adam
+    pickle_feature_encoder: true
+    save_best_only: true
+    seed: 2030
+    shuffle: true
+    task: binary_classification
+    use_features: null
+    verbose: 1

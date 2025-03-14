@@ -1,0 +1,1 @@
+ 20250314-210902,[command] python run_expid.py --config /home/chenruiyue/competition/WWW2025_MMCTR/WWW2025_MMCTR_Challenge/config/DIN_attn_emb_v3 --expid DIN_DIN_attn_emb_v2_001_acf37100 --gpu 1,[exp_id] DIN_DIN_attn_emb_v2_001_acf37100,[dataset_id] DIN_attn_emb_v2,[train] N.A.,[val] AUC: 0.986201 - logloss: 0.192207

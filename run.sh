@@ -1,0 +1,2 @@
+python run_expid.py --config /home/chenruiyue/competition/WWW2025_MMCTR/WWW2025_MMCTR_Challenge/config/DIN_attn_emb_v3 --expid DIN_DIN_attn_emb_v2_001_acf37100 --gpu 0
+python prediction.py --config ./config/DIN_attn_emb_v3 --expid DIN_DIN_attn_emb_v2_001_acf37100 --gpu 0
