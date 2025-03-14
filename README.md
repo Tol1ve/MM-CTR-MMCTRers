@@ -62,11 +62,16 @@ source activate fuxictr
 
 After setting up the environment and downloading the dataset, simply run:
 
+✅ **suggested**
 ```bash
 chmod +x run.sh
 bash run.sh
 ```
-
+⚠️ **untestd way**
+```bash
+chmod +x run_from_begin.sh
+bash run_from_begin.sh
+```
  **The `run.sh` script will handle:**
 1️⃣ config set(if not ) 🏗️
 2️⃣ Model training 🎯
