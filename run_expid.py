@@ -28,7 +28,7 @@ from fuxictr.pytorch.dataloaders import RankDataLoader
 from fuxictr.pytorch.torch_utils import seed_everything
 from fuxictr.preprocess import FeatureProcessor, build_dataset
 import src as model_zoo
-from src.mmctr_dataloader import MMCTRDataLoader,LYDataLoader,YDataLoader
+from src.mmctr_dataloader import MMCTRDataLoader
 import gc
 import argparse
 import os
@@ -68,10 +68,10 @@ if __name__ == '__main__':
     
     model = model_class(feature_map, **params)
     model.count_parameters() # print number of parameters used in model
-    if params['model_change'] and not ("DIN_att_emb" in params['model_change']):
-        params["data_loader"] = YDataLoader
-    else:
-        params["data_loader"] = MMCTRDataLoader
+
+    
+
+    params["data_loader"] = MMCTRDataLoader
 
     train_gen, valid_gen = RankDataLoader(feature_map, stage='train', **params).make_iterator()
     model.fit(train_gen, validation_data=valid_gen, **params)

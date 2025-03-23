@@ -79,8 +79,10 @@ bash run_from_begin.sh
 python prediction.py --config ./config/DIN_attn_emb_v3 --expid DIN_DIN_attn_emb_v2_001_acf37100 --gpu 0
 ```
  **The `run.sh` script will handle:**
+
 1️⃣ config set(if not ) 🏗️
 2️⃣ Model training 🎯
+
 3️⃣ Prediction on the test set 🔍
 4️⃣ Generating the final submission file 📄
 
@@ -90,6 +92,7 @@ Our pre-trained model is located at
 
 **You can also modify our model and parameters as you want it by changing  ./config/DIN_attn_emb_v3**
 
+⚠️ **Notice, we upload some different version of models we have tried. the final model we use for the competition is at ./src/DIN_att_emb_rms.py**
 ---
 
 ## 💬 4. Discussion
